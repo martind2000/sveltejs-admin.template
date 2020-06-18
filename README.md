@@ -10,6 +10,8 @@ Added [svelte-spa-router](https://www.npmjs.com/package/svelte-spa-router) and b
 
 Updated NPM dependencies.
 
+Restructured the site for the Admin skin.
+
 ## 2020-04-17
 
 Added [svelte-preprocess](https://www.npmjs.com/package/svelte-preprocess) preprocessor with support for: PostCSS, SCSS, Less, Stylus, Coffeescript, TypeScript and Pug.

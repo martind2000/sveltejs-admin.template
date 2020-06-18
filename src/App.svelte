@@ -1,6 +1,9 @@
 <script>
-  import Router from 'svelte-spa-router';
-  import routes from './routes'
+  import Router from 'svelte-spa-router'
+  import routes from './routes';
+  import Header from "./components/Header.svelte";
+  import Navbar from "./components/Navbar.svelte";
+  import Footer from "./components/Footer.svelte";
 
   let currentPage;
 
@@ -24,26 +27,17 @@
   }
 </script>
 
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+<div class="admin">
+  <Header/>
+  <Navbar/>
+  <main class="admin__main">
+    <Router {routes} on:conditionsFailed={conditionsFailed} on:routeLoaded={routeLoaded} on:routeEvent={routeEvent}/>
+  </main>
+  <Footer/>
+</div>
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+
+<style lang="scss" global>
+  @import "./css/admin.scss";
 </style>
-
-<Router {routes} on:conditionsFailed={conditionsFailed} on:routeLoaded={routeLoaded} on:routeEvent={routeEvent} />
